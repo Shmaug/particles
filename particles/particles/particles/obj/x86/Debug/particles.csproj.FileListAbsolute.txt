@@ -1,0 +1,7 @@
+c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\obj\x86\Debug\particles.csprojResolveAssemblyReference.cache
+c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\bin\x86\Debug\particles.exe
+c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\bin\x86\Debug\particles.pdb
+c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\obj\x86\Debug\particles.exe
+c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\obj\x86\Debug\particles.pdb
+c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\bin\x86\Debug\Content\circle.xnb
