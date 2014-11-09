@@ -5,3 +5,10 @@ c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particl
 c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\obj\x86\Debug\particles.exe
 c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\obj\x86\Debug\particles.pdb
 c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\bin\x86\Debug\Content\circle.xnb
+C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\bin\x86\Debug\Content\circle.xnb
+C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\bin\x86\Debug\particles.exe
+C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\bin\x86\Debug\particles.pdb
+C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\obj\x86\Debug\particles.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\obj\x86\Debug\particles.exe
+C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\obj\x86\Debug\particles.pdb

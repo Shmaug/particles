@@ -18,7 +18,7 @@ namespace particles
         public static int screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         public static int screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
-        public const double G = 6.67e-6;
+        public const double G = 6.67e-2;
 
         public static Texture2D circleTexture;
 
@@ -93,7 +93,6 @@ namespace particles
             {
                 if (p != null)
                 {
-                    p.mass = p.mass * (10 ^ 24);
                     for (int i = 0; i < Particle.particles.Length; i++)
                     {
                         if (Particle.particles[i] == null)
@@ -119,10 +118,10 @@ namespace particles
             spriteBatch.Begin();
             if (p != null)
                 spriteBatch.Draw(circleTexture,
-                    new Rectangle((int)(p.position.X - p.mass / 4),
-                                  (int)(p.position.Y - p.mass / 4),
-                                  (int)(p.mass / 2),
-                                  (int)(p.mass / 2)),
+                    new Rectangle((int)(p.position.X - p.radius / 2),
+                                  (int)(p.position.Y - p.radius / 2),
+                                  (int)(p.radius),
+                                  (int)(p.radius)),
                     null,Color.White);
             
             for (int i = 0; i < Particle.particles.Length; i++)
@@ -130,10 +129,10 @@ namespace particles
                 if (Particle.particles[i] != null)
                 {
                     spriteBatch.Draw(circleTexture,
-                        new Rectangle((int)(Particle.particles[i].position.X - (Particle.particles[i].mass / (10 ^ 24)) / 4),
-                                      (int)(Particle.particles[i].position.Y - (Particle.particles[i].mass / (10 ^ 24)) / 4),
-                                      (int)(Particle.particles[i].mass / (10 ^ 24)) / 2,
-                                      (int)(Particle.particles[i].mass / (10 ^ 24)) / 2),
+                        new Rectangle((int)(Particle.particles[i].position.X - (Particle.particles[i].radius) / 2),
+                                      (int)(Particle.particles[i].position.Y - (Particle.particles[i].radius) / 2),
+                                      (int)(Particle.particles[i].radius),
+                                      (int)(Particle.particles[i].radius)),
                         null, Particle.particles[i].color);
                 }
             }

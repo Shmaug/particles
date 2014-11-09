@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\bin\x86\Debug\Content\circle.xnb</Output>
+      <Output>C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\bin\x86\Debug\Content\circle.xnb</Output>
       <Time>2014-11-09T05:15:33.6925159-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -16,10 +16,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particlesContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particlesContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\kevin\documents\visual studio 2010\Projects\particles\particles\particles\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particlesContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particlesContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Kevin\Documents\GitHub\particles\particles\particles\particles\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
