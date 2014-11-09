@@ -14,6 +14,7 @@ namespace particles
         public Vector2 velocity;
         public Color color;
         public float radius;
+        private Vector2 prevFnet;
         private double m;
         public double mass
         {
@@ -65,19 +66,53 @@ namespace particles
                     float r = (particles[i].radius + this.radius) / 2;
                     if (dist < r)
                     {
-                        double mg = this.calcGrav(particles[i].mass, particles[i].position);
                         Vector2 norm = this.position - particles[i].position;
                         norm.Normalize();
-                        if (dist == r)
-                            norm *= (float)mg;
+                        if (dist == r || ((this.velocity-particles[i].velocity).Length() < .1f && dist < r && dist-r < 5))
+                        {
+                            //Vector2 avg = (this.velocity + particles[i].velocity) / 2;
+                            //this.velocity = avg;
+                            //particles[i].velocity = avg;
+
+                            norm *= (float)this.calcGrav(particles[i].mass, particles[i].position);
+                            this.color = Color.Lerp(this.color, particles[i].color, .5f);
+                            particles[i].color = Color.Lerp(this.color, particles[i].color, .5f);
+                        }
                         else if (dist < r)
-                            norm *= (float)(this.velocity.Length() * this.mass);
+                        {
+                            // "rewind" to find TOI
+
+                            // d = v*t + .5*a*t^2; a = (prevFnet.Length()/(float)this.mass)
+                            // dist = this.velocity.Length()*t + .5*a*t^2
+                            // dist/t = this.velocity.Length() + .5*a*t
+                            // t^2 = (this.velocity.Length() + .5*a)/dist)
+                            float TOI = (float)Math.Sqrt((this.velocity.Length() + .5 * (prevFnet.Length() / (float)this.mass) / dist));
+                            this.position -= this.velocity * TOI;
+                            particles[i].position -= particles[i].velocity * TOI;
+
+                            /* conservation of momentum
+                             p = m*dV
+                             this.m*this.velocity = p.m*p.velocity*/
+                            //Vector2 vel = ((particles[i].velocity-this.velocity) * (float)particles[i].mass) / (float)this.mass;
+                            //this.velocity = vel;
+                            //particles[i].velocity = vel;
+
+                            Vector2 vel = this.velocity;
+                            if (this.mass < particles[i].mass)
+                                vel = Vector2.Lerp(particles[i].velocity, this.velocity, (float)(particles[i].mass / this.mass));
+                            else
+                                vel = Vector2.Lerp(this.velocity, particles[i].velocity, (float)(this.mass / particles[i].mass));
+                            
+                            this.velocity = vel;
+                            particles[i].velocity = vel;
+                        }
                         Fnet += norm;
                     }
                 }
             }
             this.velocity += Fnet / (float)this.mass;
             this.position += (this.velocity * 100) * (float)t.ElapsedGameTime.TotalSeconds; // 100 px per meter. velocity in m/s
+            prevFnet = Fnet;
         }
 
         public static void Update(GameTime t)

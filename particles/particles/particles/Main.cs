@@ -79,11 +79,15 @@ namespace particles
                 if (ms.ScrollWheelValue > lastms.ScrollWheelValue)
                     if (Keyboard.GetState().IsKeyDown(Keys.LeftControl))
                         p.mass += 1;
+                    else if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+                        p.mass += 30;
                     else
                         p.mass += 5;
                 else if (ms.ScrollWheelValue < lastms.ScrollWheelValue)
                     if (Keyboard.GetState().IsKeyDown(Keys.LeftControl))
                         p.mass -= 1;
+                    else if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+                        p.mass -= 30;
                     else
                         p.mass -= 5;
                 if (p.mass < 1)
@@ -93,6 +97,16 @@ namespace particles
             {
                 if (p != null)
                 {
+                    if (Vector2.DistanceSquared(new Vector2(ms.X, ms.Y), p.position) > p.radius)
+                    {
+                        float dist = (Vector2.Distance(new Vector2(ms.X, ms.Y), p.position) - p.radius) / 100;
+                        if (dist > 100) dist = 100;
+                        Vector2 dir = new Vector2(ms.X, ms.Y) - p.position;
+                        dir.Normalize();
+                        dir *= dist;
+                        p.velocity = dir;
+                        
+                    }
                     for (int i = 0; i < Particle.particles.Length; i++)
                     {
                         if (Particle.particles[i] == null)
